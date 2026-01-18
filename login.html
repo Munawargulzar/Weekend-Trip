@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Sign Up | Weekend Trip</title>
+    <link rel="stylesheet" href="../styles/style4.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- ===== Navigation Bar ===== -->
+    <header class="main-header">
+        <nav class="navbar">
+            <a href="../index.html" class="logo">WEEKEND <span class="logo1">Trips</span></a>
+            <button class="nav-toggle" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
+            <ul class="nav-links">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="../pages/explore.html" class="nav-link">Destinations</a></li> 
+                <li><a href="../pages/trip-planner.html" class="nav-link">Plan Trip</a></li> 
+                <li><a href="../pages/contact.html" class="nav-link">Contact</a></li>
+                <li><a href="../pages/cart.html" class="nav-link active"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+                <li><a href="../pages/login.html" class="btn-primary">Login / Sign Up</a></li> 
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="login-box">
+            <!-- Login Form Section -->
+            <div id="loginSection">
+                <h1>Welcome Back</h1>
+                <p>Log in to continue your adventure</p>
+                
+                <form id="loginForm">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" placeholder="Enter your email" required>
+
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" placeholder="Enter your password" required>
+
+                    <button type="submit" class="btn-submit">Login</button>
+                </form>
+
+                <div class="toggle-text">
+                    Don't have an account? <span onclick="toggleForms()">Sign Up</span>
+                </div>
+            </div>
+
+            <!-- Sign Up Form Section (Hidden by default) -->
+            <div id="signupSection" style="display: none;">
+                <h1>Create Account</h1>
+                <p>Join us and start planning trips</p>
+
+                <form id="signupForm">
+                    <label for="signupName">Full Name</label>
+                    <input type="text" id="signupName" placeholder="John Doe" required>
+
+                    <label for="signupEmail">Email</label>
+                    <input type="email" id="signupEmail" placeholder="name@example.com" required>
+
+                    <label for="signupPassword">Password</label>
+                    <input type="password" id="signupPassword" placeholder="Create a password" required>
+
+                    <button type="submit" class="btn-submit">Sign Up</button>
+                </form>
+
+                <div class="toggle-text">
+                    Already have an account? <span onclick="toggleForms()">Login</span>
+                </div>
+            </div>
+
+            <!-- Feedback Message -->
+            <div class="confirmation" id="authMessage"></div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content1">
+            <p class="copyright1">
+                <i class="fas fa-copyright"> 2025 <span class="logo">Weekend</span><span class="logo1">trips</span></i>
+            </p>
+            <div class="social-links1">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../scripts/script5.js"></script>
+</body>
+</html>

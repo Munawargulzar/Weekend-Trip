@@ -1,0 +1,55 @@
+/* styles/auth-nav.css */
+/* Styles for authenticated navigation */
+
+.user-greeting {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.greeting-text {
+    color: var(--color-primary, #0077b6);
+    font-weight: 600;
+    font-size: 0.95em;
+    padding: 8px 12px;
+    background: rgba(0, 119, 182, 0.1);
+    border-radius: 20px;
+}
+
+.btn-logout {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9em;
+}
+
+.btn-logout:hover {
+    background: #c82333;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(220, 53, 69, 0.3);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .user-greeting {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .greeting-text {
+        width: 100%;
+        text-align: center;
+    }
+
+    .btn-logout {
+        width: 100%;
+        padding: 10px 20px;
+    }
+}

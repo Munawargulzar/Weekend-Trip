@@ -1,0 +1,270 @@
+/* --- Variables & Global Reset --- */
+        :root {
+            --color-primary: #0077b6; /* Ocean Blue */
+            --color-secondary: #00b4d8; /* Sky Blue */
+            --color-accent: #ffb703; /* Gold/Yellow */
+            --color-text-dark: #212529;
+            --color-text-light: #f8f9fa;
+            --color-background-light: #f0f4f8; 
+            --font-primary: 'Arial', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: var(--font-primary);
+        }
+
+        body {
+            background-color: var(--color-primary);
+            color: var(--color-text-dark);
+            line-height: 1.6;
+        }
+
+        /* --- Navbar Base Styles (Shared) --- */
+        .main-header {
+            background: #ffffff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 30px;
+            position: relative; 
+        }
+
+        .logo {
+            font-family: "Stack Sans Notch", sans-serif;
+            font-size: 1.6em;
+            font-weight: 700;
+            font-style: italic;
+            color: var(--color-primary);
+            text-decoration: none;
+        }
+
+        .logo1 {
+            color: var(--color-primary);
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-style: normal;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex; 
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-link, .btn-primary {
+            text-decoration: none;
+            transition: color 0.3s, background 0.3s;
+        }
+        
+        .nav-link {
+            color: var(--color-text-dark);
+            font-weight: 500;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--color-primary);
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 100%;
+            height: 3px;
+            background: var(--color-primary);
+            border-radius: 2px;
+        }
+
+        .btn-primary {
+            background: var(--color-primary);
+            color: var(--color-text-light) !important;
+            padding: 8px 18px;
+            border-radius: 25px;
+        }
+
+        .btn-primary:hover {
+            background: #005a91;
+        }
+
+        /* --- Mobile Toggle Button Styling --- */
+        .nav-toggle {
+            background: none;
+            border: none;
+            font-size: 1.5em;
+            color: var(--color-primary);
+            cursor: pointer;
+            padding: 10px;
+            display: none; /* Hides the button on desktop screens */
+        }
+
+        /* --- Trip Planner Content Styling --- */
+        .page-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 80px); /* Adjust min-height for the sticky header */
+            padding: 40px 20px;
+        }
+        
+        .planner-container {
+            background: #ffffff;
+            padding: 40px;
+            border: 2px solid black;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 550px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .planner-container h1 {
+            color: var(--color-primary);
+            margin-bottom: 10px;
+            font-size: 2em;
+        }
+
+        .planner-container p {
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        /* Form Styling */
+        #tripForm {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            text-align: left;
+        }
+
+        label {
+            font-weight: 600;
+            margin-top: 5px;
+            color: var(--color-text-dark);
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: var(--color-secondary);
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(0, 180, 216, 0.2);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        #tripForm button[type="submit"] {
+            background-color: var(--color-accent);
+            color: var(--color-text-dark);
+            font-weight: bold;
+            padding: 15px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 25px;
+            font-size: 1.1em;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        #tripForm button[type="submit"]:hover {
+            background-color: #ffa800;
+            transform: translateY(-2px);
+        }
+
+        /* Confirmation Message */
+        .confirmation {
+            background: #e6ffed; 
+            border: 1px solid #b3ffc6;
+            color: #00a000; 
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            text-align: center;
+            display: none; 
+        }
+
+        .confirmation h3 {
+            color: #007000;
+            margin-top: 0;
+            font-size: 1.5em;
+        }
+
+        /* --- Responsive Layout (max-width: 768px) --- */
+        @media (max-width: 768px) {
+            /* Navbar adjustments */
+            .nav-toggle {
+                display: block;
+            }
+            
+            .navbar {
+                justify-content: space-between;
+                padding: 15px 20px;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column; 
+                width: 100%;
+                text-align: center;
+                background: #ffffff;
+                padding: 10px 0;
+                position: absolute; 
+                top: 100%;
+                left: 0;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                z-index: 999;
+                transition: all 0.3s ease-out;
+            }
+
+            .nav-links li {
+                margin: 10px 0;
+                width: 100%; 
+            }
+
+            .nav-link.active::after {
+                content: none;
+            }
+
+            /* Menu Open State (JS adds this class) */
+            .nav-links.open {
+                display: flex; 
+            }
+            
+            /* Planner adjustments */
+            .planner-container {
+                padding: 30px 20px;
+            }
+
+            .planner-container h1 {
+                font-size: 1.8em;
+            }
+
+            #tripForm button[type="submit"] {
+                padding: 12px;
+                font-size: 1em;
+            }
+        }
