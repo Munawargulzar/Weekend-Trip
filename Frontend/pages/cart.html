@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart | Weekend Trips</title>
+    <link rel="stylesheet" href="../styles/style5.css">
+    <link rel="stylesheet" href="../styles/style1.css">
+    <link rel="stylesheet" href="../styles/auth-nav.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="navbar">
+            <a href="../index.html" class="logo">WEEKEND <span class="logo1">Trips</span></a>
+            <ul class="nav-links">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="../pages/explore.html" class="nav-link">Destinations</a></li>
+                <li><a href="../pages/trip-planner.html" class="nav-link">Plan Trip</a></li>
+                <li><a href="../pages/contact.html" class="nav-link">Contact</a></li>
+                <li><a href="../pages/cart.html" class="nav-link active"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+                <li><a href="../pages/login.html" class="btn-primary">Login / Sign Up</a></li>
+            </ul>
+            <button class="nav-toggle"><i class="fas fa-bars"></i></button>
+        </nav>
+    </header>
+
+    <main class="cart-container">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+            <h1>Your Trip Basket</h1>
+            <a href="../pages/explore.html" class="btn-browse-destinations">
+                <i class="fas fa-compass"></i> Browse Destinations
+            </a>
+        </div>
+        
+        <div id="cart-items" class="cart-items-list">
+            <!-- JavaScript will inject items here -->
+        </div>
+
+        <div id="cart-summary" class="cart-summary" style="display: none;">
+            <div class="summary-details">
+                <p>Total Items: <span id="total-count">0</span></p>
+                <h3>Status: <span id="payment-status">Pending Confirmation</span></h3>
+            </div>
+            <button class="btn-checkout" onclick="processCheckout()">
+                <i class="fas fa-check-circle"></i> Confirm Bookings
+            </button>
+        </div>
+
+        <div id="empty-cart-msg" class="empty-msg">
+            <i class="fas fa-suitcase-rolling"></i>
+            <p>Your cart is empty. Time to plan a new adventure!</p>
+            <a href="../pages/explore.html" class="btn-primary" style="display: inline-block; margin-top: 20px; text-decoration: none;">
+                <i class="fas fa-compass"></i> Browse Destinations
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content1">
+            <p class="copyright1">
+                <i class="fas fa-copyright"> 2025 <span class="logo">Weekend</span><span class="logo1">trips</span> | Plan. Explore. Relax.</i>
+            </p>
+            <div class="social-links1">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../scripts/auth-nav.js"></script>
+    <script src="../scripts/script6.js"></script>
+</body>
+</html>

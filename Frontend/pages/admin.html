@@ -1,0 +1,153 @@
+<!-- admin/dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Weekend Trips</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles/admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <a href="../index.html"><div class="logo">WEEKEND <span class="logo1">Admin</span></div></a>
+            <nav class="menu">
+                <button class="menu-btn active" onclick="showSection('destinations')"><i class="fas fa-map"></i> Destinations</button>
+                <button class="menu-btn" onclick="showSection('bookings')"><i class="fas fa-plane"></i> Bookings</button>
+                <button class="menu-btn" onclick="showSection('inquiries')"><i class="fas fa-envelope"></i> Inquiries</button>
+                <button class="menu-btn" onclick="showSection('users')"><i class="fas fa-users"></i> Users</button>
+                <button class="menu-btn logout" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+            
+            <!-- Destinations Section -->
+            <section id="section-destinations" class="panel-section active">
+                <div class="section-header">
+                    <h2>Manage Destinations</h2>
+                    <button class="btn-add" onclick="openDestinationModal()">+ Add New</button>
+                </div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Title</th>
+                                <th>Price/Tag</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="destinationsTableBody">
+                            <!-- JS will populate this -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Bookings Section -->
+            <section id="section-bookings" class="panel-section">
+                <h2>Manage Trip Bookings</h2>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Destination</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="bookingsTableBody"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- admin/dashboard.html -->
+   <section id="section-bookings" class="panel-section">
+    <div class="section-header">
+        <h2>Cart & Trip Management</h2>
+        <p>Manage user selections and approve bookings.</p>
+    </div>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>User Details</th>
+                    <th>Destination</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="bookingsTableBody">
+                <!-- script.js will populate this -->
+            </tbody>
+        </table>
+    </div>
+    </section>
+
+            <!-- Inquiries Section -->
+            <section id="section-inquiries" class="panel-section">
+                <h2>Contact Inquiries</h2>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Subject</th>
+                                <th>Message</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="inquiriesTableBody"></tbody>
+                    </table>
+                </div>
+            </section>
+
+             <!-- Users Section -->
+             <section id="section-users" class="panel-section">
+                <h2>Registered Users</h2>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="usersTableBody"></tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal for Adding/Editing Destinations -->
+    <div id="destModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle">Add Destination</h2>
+            <form id="destForm">
+                <input type="hidden" id="destId">
+                <label>Title</label>
+                <input type="text" id="destTitle" required>
+                <label>Image URL</label>
+                <input type="text" id="destImage" placeholder="https://..." required>
+                <label>Tag/Price</label>
+                <input type="text" id="destTag" placeholder="e.g. Mountain Retreat" required>
+                <label>Description</label>
+                <textarea id="destDesc" required></textarea>
+                <button type="submit" class="btn-save">Save Destination</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="../scripts/admin.js"></script>
+</body>
+</html>

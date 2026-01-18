@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Weekend Trip</title>
+    <!-- Required for the hamburger icon and social media icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../styles/style3.css">
+    <link rel="stylesheet" href="../styles/auth-nav.css"> 
+</head>
+</body>
+    <!-- ===== Navigation Bar ===== -->
+    <header class="main-header">
+        <nav class="navbar">
+            <a href="../index.html" class="logo"> WEEKEND <span class="logo1">Trips</span></a>
+            
+            <button class="nav-toggle" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
+
+            <ul class="nav-links">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="../pages/explore.html" class="nav-link">Destinations</a></li> 
+                <li><a href="../pages/trip-planner.html" class="nav-link">Plan Trip</a></li> 
+                <!-- Set the 'Contact' link as active -->
+                <li><a href="../pages/contact.html" class="nav-link active">Contact</a></li>
+                <li><a href="../pages/cart.html" class="nav-link active"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+                <li><a href="../pages/login.html" class="btn-primary">Login / Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- ===== End Navigation Bar ===== -->
+
+    <div class="contact-content">
+        
+        <!-- Contact Information (Left/Bottom on Mobile) -->
+        <section class="contact-info">
+            <h2>Get in Touch Directly</h2>
+            
+            <div class="info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                    <strong>Our Office</strong>
+                    <p>123 Adventure Lane, Cityscape, CA 90210</p>
+                </div>
+            </div>
+            
+            <div class="info-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                    <strong>Email Us</strong>
+                    <p>support@weekendtrips.com</p>
+                </div>
+            </div>
+            
+            <div class="info-item">
+                <i class="fas fa-phone-alt"></i>
+                <div>
+                    <strong>Call Us 24/7</strong>
+                    <p>+1 (555) 123-4567</p>
+                </div>
+            </div>
+
+            <div class="social-links-contact">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </section>
+
+        <!-- Contact Form (Right/Top on Mobile) -->
+        <section class="contact-form-container">
+            <h2>Send Us a Message</h2>
+            <form id="contactForm" action="#" method="POST">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required placeholder="John Doe">
+
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" required placeholder="name@example.com">
+
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" required placeholder="Inquiry about a booking">
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required placeholder="Tell us how we can help..."></textarea>
+
+                <button type="submit">Submit Inquiry</button>
+            </form>
+            
+            <div class="confirmation" id="contactConfirmation">
+                <h3>Message Sent Successfully!</h3>
+                <p>We appreciate you reaching out and will respond within 24 hours.</p>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <div class="footer-content1">
+            <p class="copyright1">
+                <i class="fas fa-copyright"> 2025 <span class="logo">Weekend</span><span class="logo1">trips</span> | Plan. Explore. Relax.</i>
+            </p>
+            <div class="social-links1">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../scripts/script4.js"></script>
+    <script src="../scripts/auth-nav.js"></script>
+
+</body>
+</html>

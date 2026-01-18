@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trip Planner | Weekend Trip</title>
+  <link rel="stylesheet" href="../styles/style2.css">
+  <link rel="stylesheet" href="../styles/auth-nav.css"> 
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+   <!-- ===== Navigation Bar ===== -->
+    <header class="main-header">
+        <nav class="navbar">
+            <a href="../index.html" class="logo">WEEKEND <span class="logo1">Trips</span></a>
+            
+            <button class="nav-toggle" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
+
+            <ul class="nav-links">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="../pages/explore.html" class="nav-link">Destinations</a></li> 
+                <!-- Set the 'Plan Trip' link as active -->
+                <li><a href="../pages/trip-planner.html" class="nav-link active">Plan Trip</a></li> 
+                <li><a href="../pages/contact.html" class="nav-link">Contact</a></li>
+                <li><a href="../pages/cart.html" class="nav-link active"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+                <li><a href="../pages/login.html" class="btn-primary">Login / Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- ===== End Navigation Bar ===== -->
+
+    <div class="page-content">
+        <div class="planner-container">
+            <h1>Plan Your Weekend Getaway</h1>
+            <p>Fill out your trip details below and start your adventure! </p>
+
+            <form id="tripForm" action="/book-trip" method="POST">
+                <label for="destination">Select Destination</label>
+                <select id="destination" name="destination" required>
+                    <option value="">-- Choose a destination --</option>
+                    <option value="Beach Paradise">Beach Paradise</option>
+                    <option value="Mountain Retreat">Mountain Retreat</option>
+                    <option value="City Adventure">City Adventure</option>
+                    <option value="Desert Safari">Desert Safari</option>
+                </select>
+
+                <label for="date">Travel Date</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="people">Number of Travelers</label>
+                <input type="number" id="people" name="people" placeholder="e.g., 2" min="1" required>
+
+                <label for="notes">Special Requests (optional)</label>
+                <textarea id="notes" name="notes" placeholder="Write any preferences (e.g., specific hotel, vegetarian meals, early check-in)..."></textarea>
+
+                <button type="submit">Book My Trip</button>
+            </form>
+
+            <div class="confirmation" id="confirmation">
+                <h3>Success! Your Trip is Booked!</h3>
+                <p>We've received your details and a trip specialist will reach out shortly to finalize your adventure.</p>
+            </div>
+        </div>
+    </div>
+
+  <script src="../scripts/script3.js"></script>
+  <script src="../scripts/auth-nav.js"></script>
+  
+</body>
+</html>
