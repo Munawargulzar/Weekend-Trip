@@ -1,0 +1,380 @@
+/* --- Variables & Global Reset --- */
+        :root {
+            --color-primary: #0077b6; /* Ocean Blue */
+            --color-secondary: #00b4d8; /* Sky Blue */
+            --color-accent: #ffb703; /* Gold/Yellow */
+            --color-text-dark: #212529;
+            --color-text-light: #f8f9fa;
+            --color-background-light: #f0f4f8; 
+            --font-primary: 'Arial', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: var(--font-primary);
+        }
+
+        body {
+            background-color: #00b4d8;
+            color: var(--color-text-dark);
+            line-height: 1.6;
+        }
+
+        /* --- Navbar Base Styles (Shared) --- */
+        .main-header {
+            background: #ffffff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 30px;
+            position: relative; 
+        }
+
+        .logo {
+            font-family: "Stack Sans Notch", sans-serif;
+            font-size: 1.6em;
+            font-weight: 700;
+            font-style: italic;
+            color: var(--color-primary);
+            text-decoration: none;
+        }
+
+        .logo1 {
+            color: var(--color-primary);
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-style: normal;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex; 
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-link, .btn-primary {
+            text-decoration: none;
+            transition: color 0.3s, background 0.3s;
+        }
+        
+        .nav-link {
+            color: var(--color-text-dark);
+            font-weight: 500;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--color-primary);
+        }
+        
+        /* Highlighting the active button (Login/Sign Up) */
+        .btn-primary {
+            background: var(--color-accent); /* Use accent color for high visibility */
+            color: var(--color-text-dark) !important;
+            font-weight: bold;
+            padding: 8px 18px;
+            border-radius: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-primary:hover {
+            background: #ffa800;
+            transform: translateY(-1px);
+        }
+
+        /* --- Mobile Toggle Button Styling --- */
+        .nav-toggle {
+            background: none;
+            border: none;
+            font-size: 1.5em;
+            color: var(--color-primary);
+            cursor: pointer;
+            padding: 10px;
+            display: none; /* Hides the button on desktop screens */
+        }
+
+        /* --- Login Page Specific Content --- */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 180px); /* Account for header and footer */
+            padding: 40px 20px;
+        }
+
+        .login-box {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .login-box h1 {
+            color: var(--color-primary);
+            margin-bottom: 5px;
+            font-size: 2em;
+        }
+
+        .login-box p {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 0.95em;
+        }
+
+        /* Form Styling */
+        #loginForm {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            text-align: left;
+        }
+
+        #loginForm label {
+            font-weight: 600;
+            color: var(--color-text-dark);
+        }
+
+        #loginForm input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+
+        #loginForm input:focus {
+            border-color: var(--color-secondary);
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(0, 180, 216, 0.2);
+        }
+
+        #loginForm button[type="submit"] {
+            background-color: var(--color-primary);
+            color: var(--color-text-light);
+            font-weight: bold;
+            padding: 15px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 15px;
+            font-size: 1.1em;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        #loginForm button[type="submit"]:hover {
+            background-color: #005a91;
+            transform: translateY(-2px);
+        }
+
+        /* Confirmation Message */
+        #loginConfirmation {
+            background: #e6ffed; 
+            border: 1px solid #b3ffc6;
+            color: #00a000; 
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            text-align: center;
+            display: none; 
+        }
+
+        /* --- Footer (Enhanced) --- */
+        footer {
+            background: #212529; /* #1f2833 */
+            color: #aeb8c4;
+            padding: 30px 30px; /* Increased padding */
+            font-size: 0.95em;
+        }
+
+        .footer-content1 {
+            display: flex;
+            justify-content: space-between; /* Space out the copyright and social links */
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-content1 .logo {
+            font-size: 1.5rem; /* Adjusting logo size for footer context */
+            color: var(--color-primary);
+            font-style: italic;
+        }
+
+        .footer-content1 .logo1 {
+            font-size: 1rem;
+            color: var(--color-primary); /* Using accent color for contrast */
+        }
+
+        .copyright1 {
+            color: #ccc;
+            font-style: normal;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .copyright1 i {
+            font-style: normal;
+        }
+
+        .social-links1 a {
+            color: var(--color-text-light);
+            font-size: 1.5em;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        .social-links1 a:hover {
+            color: var(--color-secondary);
+        }
+
+
+        /* --- Responsive Layout (max-width: 768px) --- */
+        @media (min-width: 850px) {
+            /* On desktop, switch the order of form and info */
+            .contact-form-container { order: 1; }
+            .contact-info { order: 2; }
+            .footer-content1 {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+
+
+        /* --- Responsive Layout --- */
+        @media (min-width: 769px) {
+            .footer-content1 {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            /* Mobile Navbar Toggle */
+            .nav-toggle { display: block; }
+            .navbar { justify-content: space-between; padding: 15px 20px; }
+            .nav-links {
+                display: none; flex-direction: column; width: 100%; text-align: center;
+                background: #ffffff; padding: 10px 0; position: absolute; top: 100%;
+                left: 0; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); z-index: 999;
+            }
+            .nav-links li { margin: 10px 0; width: 100%; }
+            .nav-link.active::after { content: none; }
+            .nav-links.open { display: flex; }
+            
+            /* Login Box adjustments */
+            .login-box {
+                padding: 30px 20px;
+            }
+        }
+
+/* --- Variables & Global Reset --- */
+:root {
+    --color-primary: #0077b6;
+    --color-secondary: #00b4d8;
+    --color-accent: #ffb703;
+    --color-text-dark: #212529;
+    --color-text-light: #f8f9fa;
+    --color-background-light: #f0f4f8; 
+    --font-primary: 'Arial', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: var(--font-primary); }
+
+body {
+    background-color: var(--color-background-light); /* Softer background than the previous bright blue */
+    background-image: linear-gradient(135deg, #00b4d8 0%, #0077b6 100%); /* Nice gradient */
+    color: var(--color-text-dark);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Navbar (Reused) --- */
+.main-header { background: #ffffff; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+.navbar { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 15px 30px; }
+.logo { font-size: 1.6em; font-weight: 700; color: var(--color-primary); text-decoration: none; font-style: italic; }
+.logo1 { color: var(--color-primary); font-family: Impact, sans-serif; font-style: normal; }
+.nav-links { display: flex; gap: 30px; list-style: none; }
+.nav-link { color: var(--color-text-dark); text-decoration: none; font-weight: 500; }
+.btn-primary { background: var(--color-accent); color: #fff; padding: 8px 18px; border-radius: 25px; text-decoration: none; font-weight: bold; }
+.nav-toggle { display: none; background: none; border: none; font-size: 1.5em; color: var(--color-primary); cursor: pointer; }
+
+/* --- Login/Signup Container --- */
+.container {
+    flex: 1; /* Pushes footer down */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.login-box {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    transition: height 0.3s ease;
+}
+
+.login-box h1 { color: var(--color-primary); margin-bottom: 10px; font-size: 2em; }
+.login-box p { color: #666; margin-bottom: 25px; font-size: 0.95em; }
+
+form { display: flex; flex-direction: column; text-align: left; gap: 15px; }
+label { font-weight: 600; font-size: 0.9em; color: #444; }
+input { padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 1em; background: #fafafa; }
+input:focus { border-color: var(--color-primary); outline: none; background: #fff; }
+
+.btn-submit {
+    background-color: var(--color-primary);
+    color: white;
+    font-weight: bold;
+    padding: 14px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.1em;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+.btn-submit:hover { background-color: #005a91; transform: translateY(-2px); }
+
+/* --- Toggle Text --- */
+.toggle-text { margin-top: 20px; font-size: 0.9em; color: #666; }
+.toggle-text span { color: var(--color-primary); font-weight: bold; cursor: pointer; text-decoration: underline; }
+.toggle-text span:hover { color: var(--color-accent); }
+
+/* --- Messages --- */
+.confirmation { margin-top: 15px; padding: 10px; border-radius: 5px; display: none; font-weight: bold; }
+
+/* --- Footer --- */
+footer { background: #212529; color: #aeb8c4; padding: 20px 30px; margin-top: auto; }
+.footer-content1 { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
+.social-links1 a { color: #fff; margin-left: 15px; font-size: 1.2em; }
+
+/* Mobile */
+@media (max-width: 768px) {
+    .nav-toggle { display: block; }
+    .nav-links { display: none; flex-direction: column; position: absolute; top: 60px; left: 0; width: 100%; background: white; padding: 20px; box-shadow: 0 5px 10px rgba(0,0,0,0.1); }
+    .nav-links.open { display: flex; }
+    .footer-content1 { flex-direction: column; gap: 10px; }
+}

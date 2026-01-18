@@ -1,0 +1,472 @@
+/* --- Variables & Global Reset --- */
+:root {
+    --color-primary: #0077b6; /* Ocean Blue */
+    --color-secondary: #00b4d8; /* Sky Blue */
+    --color-accent: #ffb703; /* Gold/Yellow */
+    --color-text-dark: #212529;
+    --color-text-light: #f8f9fa;
+    --color-background-light: #f0f4f8; /* Light Grey Blue Background */
+    --font-primary: 'Arial', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-primary);
+}
+
+body {
+    background-color: var(--color-background-light);
+    color: var(--color-text-dark);
+    line-height: 1.6;
+}
+
+/* --- Navbar Styling for Explore Page (Reusable from Homepage) --- */
+
+.main-header {
+    background: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 30px;
+}
+
+.logo {
+    font-family: "Stack Sans Notch", sans-serif; /* Use the header font from the homepage */
+    font-size: 1.6em;
+    font-weight: 700;
+    color: var(--color-primary); /* Default dark color */
+}
+
+.logo1 {
+    color: var(--color-primary); /* Blue for emphasis */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-link {
+    color: var(--color-text-dark);
+    font-weight: 500;
+    padding: 5px 0;
+    position: relative;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--color-primary);
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 3px;
+    background: var(--color-primary);
+    border-radius: 2px;
+}
+
+.btn-primary {
+    background: var(--color-primary);
+    color: var(--color-text-light) !important;
+    padding: 8px 18px;
+    border-radius: 25px;
+}
+
+.btn-primary:hover {
+    background: #005a91;
+}
+
+.headline {
+    font-family: "Abril Fatface", serif;
+    font-size: 4em;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.subheading {
+    font-size: 1.3em;
+    margin-bottom: 40px;
+    font-style: italic;
+    font-weight: 400;
+}
+
+/* --- Section for Original Header Content --- */
+.page-intro{
+    position: relative;
+    height: 90vh;
+    /* Ensuring the background image covers the entire area */
+    background: url("https://images.unsplash.com/photo-1624236028842-88acfd4e5287?q=80&w=2188&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") center center no-repeat;
+    background-size: cover; /* Key change: explicitly using cover */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.page-section{
+    z-index: 10;
+    max-width: 900px;
+    padding: 20px;
+    color: var(--color-text-light);
+}
+
+.page-intro::before{
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.45); /* Darker overlay for text contrast */
+}
+
+/* --- 1. Navbar Base Styles (Large Screens) --- */
+
+.main-header {
+    background: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 30px;
+    position: relative; /* Important for absolute positioning the mobile menu */
+}
+
+.logo {
+    font-family: "Stack Sans Notch", sans-serif;
+    font-size: 1.6em;
+    font-weight: 700;
+    font-style: italic;
+    color: var(--color-primary);
+}
+
+.logo1 {
+    color: var(--color-primary);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-style: normal;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex; /* Displayed as a row by default */
+    gap: 30px;
+    align-items: center;
+}
+
+/* Link Styling */
+.nav-link, .btn-primary {
+    text-decoration: none;
+    transition: color 0.3s, background 0.3s;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--color-primary);
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 3px;
+    background: var(--color-primary);
+    border-radius: 2px;
+}
+
+.btn-primary {
+    background: var(--color-primary);
+    color: var(--color-text-light) !important;
+    padding: 8px 18px;
+    border-radius: 25px;
+}
+
+.btn-primary:hover {
+    background: #005a91;
+}
+
+/* --- 2. Hidden Menu Toggle Button Styling --- */
+
+.nav-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    color: var(--color-primary, #0077b6);
+    cursor: pointer;
+    padding: 10px;
+    display: none; /* Hides the button on desktop screens */
+}
+
+/* --- 3. Mobile Layout (max-width: 768px) --- */
+
+@media (max-width: 768px) {
+    /* Show the hamburger button */
+    .nav-toggle {
+        display: block;
+    }
+    
+    /* Modify Navbar container on mobile */
+    .navbar {
+        /* Align items for logo and toggle button */
+        justify-content: space-between;
+        padding: 15px 20px;
+    }
+
+    /* Hide the main nav links by default */
+    .nav-links {
+        display: none;
+        flex-direction: column; /* Stack links vertically */
+        width: 100%;
+        text-align: center;
+        background: #ffffff;
+        padding: 10px 0;
+        
+        /* Position the menu dropdown full-width under the navbar */
+        position: absolute; 
+        top: 100%;
+        left: 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+        
+        /* Add a smooth transition for opening/closing */
+        transition: all 0.3s ease-out;
+    }
+
+    /* Style individual links in the stack */
+    .nav-links li {
+        margin: 10px 0;
+        width: 100%; /* Ensures links take full width */
+    }
+
+    /* Remove the default active indicator on mobile to use the full link area */
+    .nav-link.active::after {
+        content: none;
+    }
+
+    /* --- 4. Menu Open State (Triggered by JavaScript) --- */
+    .nav-links.open {
+        display: flex; /* JavaScript adds this class to display the menu */
+    }
+}
+
+/* --- Responsive Adjustments for Navbar --- */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 20px 30px;
+    }
+
+    .nav-links {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+}
+
+/* --- Search Bar --- */
+.search-bar {
+    display: flex;
+    justify-content: center;
+    padding: 30px 20px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+}
+
+#searchInput {
+    padding: 12px 20px;
+    border: 2px solid #ccc;
+    border-radius: 25px 0 0 25px;
+    font-size: 1em;
+    width: 100%;
+    max-width: 400px;
+    transition: border-color 0.3s;
+}
+
+#searchInput:focus {
+    border-color: var(--color-primary);
+    outline: none;
+}
+
+.search-bar button {
+    padding: 12px 25px;
+    border: none;
+    background-color: var(--color-accent);
+    color: var(--color-text-dark);
+    font-weight: bold;
+    border-radius: 0 25px 25px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-bar button:hover {
+    background-color: #ffa000; /* Darker accent */
+}
+
+/* --- Destinations Grid --- */
+.destinations {
+    display: grid;
+    /* Responsive Grid: minimum width of 300px per card */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 40px 50px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* --- Destination Card --- */
+.destination-card {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.destination-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.destination-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover; /* Ensures image fills space nicely */
+    display: block;
+}
+
+.destination-card h3 {
+    color: var(--color-primary);
+    margin: 15px 0 10px;
+    font-size: 1.5em;
+}
+
+.destination-card p {
+    padding: 0 20px;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.destination-card button {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    border: none;
+    padding: 10px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.destination-card button:hover {
+    background-color: #005a91; /* Darker primary color */
+}
+
+/* --- Footer --- */
+footer {
+    background: var(--color-background-dark); /* #1f2833 */
+    color: #aeb8c4;
+    padding: 30px 30px; /* Increased padding */
+    font-size: 0.95em;
+}
+
+.footer-content1 {
+    display: flex;
+    justify-content: space-between; /* Space out the copyright and social links */
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.copyright1 {
+    margin: 0;
+}
+
+.social-links1 {
+    display: flex;
+    gap: 18px;
+}
+
+.social-links1 a {
+    color: #aeb8c4; /* Icon color */
+    font-size: 1.2em;
+}
+
+.social-links1 a:hover {
+    color: var(--color-accent); /* Hover color: #ffb703 */
+    transform: translateY(-2px);
+}
+
+/* --- Responsiveness (Footer) --- */
+@media (max-width: 600px) {
+    .footer-content1 {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+}
+
+/* --- Responsiveness --- */
+@media (max-width: 768px) {
+    .destinations {
+        padding: 30px 20px;
+    }
+
+    .search-bar {
+        padding: 20px;
+    }
+
+    #searchInput {
+        padding: 10px 15px;
+    }
+    
+    .search-bar button {
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    .search-bar {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #searchInput {
+        border-radius: 25px; /* Full rounding for mobile stack */
+        margin-bottom: 10px;
+    }
+    
+    .search-bar button {
+        border-radius: 25px; /* Full rounding for mobile stack */
+        width: 100%;
+    }
+}

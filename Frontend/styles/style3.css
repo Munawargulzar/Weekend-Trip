@@ -1,0 +1,328 @@
+    /* --- Variables & Global Reset --- */
+        :root {
+            --color-primary: #0077b6; /* Ocean Blue */
+            --color-secondary: #00b4d8; /* Sky Blue */
+            --color-accent: #ffb703; /* Gold/Yellow */
+            --color-text-dark: #212529;
+            --color-text-light: #f8f9fa;
+            --color-background-light: #f0f4f8; 
+            --font-primary: 'Arial', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: var(--font-primary);
+        }
+
+        body {
+            background-color: lightskyblue;
+            color: var(--color-text-dark);
+            line-height: 1.6;
+        }
+
+        /* --- Navbar Base Styles (Shared) --- */
+        .main-header {
+            background: #ffffff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 30px;
+            position: relative; 
+        }
+
+        .logo {
+            font-family: "Stack Sans Notch", sans-serif;
+            font-size: 1.6em;
+            font-weight: 700;
+            font-style: italic;
+            color: var(--color-primary);
+            text-decoration: none;
+        }
+
+        .logo1 {
+            color: var(--color-primary);
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-style: normal;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex; 
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-link, .btn-primary {
+            text-decoration: none;
+            transition: color 0.3s, background 0.3s;
+        }
+        
+        .nav-link {
+            color: var(--color-text-dark);
+            font-weight: 500;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--color-primary);
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 100%;
+            height: 3px;
+            background: var(--color-primary);
+            border-radius: 2px;
+        }
+
+        .btn-primary {
+            background: var(--color-primary);
+            color: var(--color-text-light) !important;
+            padding: 8px 18px;
+            border-radius: 25px;
+        }
+
+        .btn-primary:hover {
+            background: #005a91;
+        }
+
+        /* --- Mobile Toggle Button Styling --- */
+        .nav-toggle {
+            background: none;
+            border: none;
+            font-size: 1.5em;
+            color: var(--color-primary);
+            cursor: pointer;
+            padding: 10px;
+            display: none; /* Hides the button on desktop screens */
+        }
+
+        /* --- Contact Page Specific Layout --- */
+        .contact-content {
+            padding: 60px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+        }
+
+        /* --- Contact Form Section --- */
+        .contact-form-container {
+            background: #ffffff;
+            padding: 40px;
+            border: 2px solid black;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            flex: 1 1 450px; /* Allows it to take up a large portion of the width */
+            order: 2; /* On mobile, put form below info */
+        }
+        
+        .contact-form-container h2 {
+            color: var(--color-primary);
+            margin-bottom: 25px;
+            font-size: 2em;
+            text-align: center;
+        }
+        
+        #contactForm label {
+            display: block;
+            font-weight: 600;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            color: var(--color-text-dark);
+        }
+
+        #contactForm input, #contactForm textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+
+        #contactForm input:focus, #contactForm textarea:focus {
+            border-color: var(--color-secondary);
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(0, 180, 216, 0.2);
+        }
+
+        #contactForm textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        #contactForm button[type="submit"] {
+            background-color: var(--color-primary);
+            color: var(--color-text-light);
+            font-weight: bold;
+            padding: 15px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 25px;
+            font-size: 1.1em;
+            transition: background-color 0.3s, transform 0.3s;
+            width: 100%;
+        }
+
+        #contactForm button[type="submit"]:hover {
+            background-color: #005a91;
+            transform: translateY(-2px);
+        }
+        
+        /* --- Contact Info Section --- */
+        .contact-info {
+            flex: 1 1 350px;
+            padding: 40px 20px;
+            border: 2px solid black;
+            background: var(--color-primary);
+            color: var(--color-text-light);
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            order: 1; /* On mobile, put info first */
+        }
+        
+        .contact-info h2 {
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            gap: 15px;
+        }
+
+        .info-item i {
+            font-size: 1.5em;
+            color: var(--color-accent);
+        }
+
+        .social-links-contact {
+            margin-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 20px;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .social-links-contact a {
+            color: var(--color-text-light);
+            font-size: 1.8em;
+            transition: color 0.3s;
+        }
+
+        .social-links-contact a:hover {
+            color: var(--color-accent);
+        }
+        
+        /* --- Confirmation Message (Shared) --- */
+        #contactConfirmation {
+            background: #e6ffed; 
+            border: 1px solid #b3ffc6;
+            color: #00a000; 
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            text-align: center;
+            display: none; 
+        }
+
+        /* --- Footer (Enhanced) --- */
+        footer {
+            background: #212529; /* #1f2833 */
+            color: #aeb8c4;
+            padding: 30px 30px; /* Increased padding */
+            font-size: 0.95em;
+        }
+
+        .footer-content1 {
+            display: flex;
+            justify-content: space-between; /* Space out the copyright and social links */
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-content1 .logo {
+            font-size: 1.5rem; /* Adjusting logo size for footer context */
+            color: var(--color-primary);
+        }
+
+        .footer-content1 .logo1 {
+            font-size: 1rem;
+            color: var(--color-primary); /* Using accent color for contrast */
+        }
+
+        .copyright1 {
+            color: #ccc;
+            font-style: normal;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .copyright1 i {
+            font-style: normal;
+        }
+
+        .social-links1 a {
+            color: var(--color-text-light);
+            font-size: 1.5em;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        .social-links1 a:hover {
+            color: var(--color-secondary);
+        }
+
+
+        /* --- Responsive Layout (max-width: 768px) --- */
+        @media (min-width: 850px) {
+            /* On desktop, switch the order of form and info */
+            .contact-form-container { order: 1; }
+            .contact-info { order: 2; }
+            .footer-content1 {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+
+        @media (max-width: 768px) {
+            /* Mobile Navbar Toggle (Same as Trip Planner) */
+            .nav-toggle { display: block; }
+            .navbar { justify-content: space-between; padding: 15px 20px; }
+            .nav-links {
+                display: none; flex-direction: column; width: 100%; text-align: center;
+                background: #ffffff; padding: 10px 0; position: absolute; top: 100%;
+                left: 0; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); z-index: 999;
+            }
+            .nav-links li { margin: 10px 0; width: 100%; }
+            .nav-link.active::after { content: none; }
+            .nav-links.open { display: flex; }
+            
+            /* Contact Content adjustments */
+            .contact-content { padding: 30px 10px; }
+            .contact-info, .contact-form-container { flex: 1 1 100%; }
+        }
